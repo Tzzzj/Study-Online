@@ -20,7 +20,7 @@
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:layout_marginLeft="20dp"
-                android:background="@mipmap/login_login">
+                android:background="@mipmap/study_online">
             </ImageView>
             <TextView
                 android:layout_marginLeft="10dp"
@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Study Online"
-                android:textColor="#999999"
+                android:textColor="#3399FF"
                 android:textStyle="bold"
                 android:textSize="42sp">
             </TextView>
@@ -39,7 +39,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        ></LinearLayout>
+        >
+        <!--用户名-->
+
+        <!--密码-->
+    </LinearLayout>
 
 
 </LinearLayout>
