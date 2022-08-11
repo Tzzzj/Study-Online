@@ -6,35 +6,326 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".activity.RegisterActivity">
+    tools:context=".RegisterActivity">
 
+    <!--Top-->
     <LinearLayout
+        android:id="@+id/linear_Top"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#A6A6EA"
+        android:background="#4DACF3"
         android:orientation="horizontal">
         <!--返回按钮-->
-
         <Button
+            android:id="@+id/register_back"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:gravity="center_vertical"
-            android:background="@mipmap/register_back">
+            android:background="@mipmap/log"
+            android:gravity="center_vertical">
         </Button>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
+            android:letterSpacing="0.5"
             android:text="注册"
             android:textColor="@color/white"
-            android:textStyle="bold"
             android:textSize="15sp"
-            android:letterSpacing="0.5">
+            android:textStyle="bold">
         </TextView>
-
-
     </LinearLayout>
 
+    <!--Center-->
+
+    <!--Username-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear_Top"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
+            <!--Icon-->
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="15dp"
+                android:background="@mipmap/log"></ImageView>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/register_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="用户名"
+                android:textCursorDrawable="@color/black"
+                android:textSize="15sp"
+                app:met_baseColor="@color/black"
+                app:met_floatingLabel="highlight"
+                app:met_helperText="请输入用户名"
+                app:met_maxCharacters="17"
+                app:met_primaryColor="@color/black"
+                app:met_singleLineEllipsis="true"></com.rengwuxian.materialedittext.MaterialEditText>
+        </LinearLayout>
+
+
+        <!--Password-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear_Top"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
+            <!--Icon-->
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="15dp"
+                android:background="@mipmap/log"></ImageView>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/register_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="密码"
+                android:textCursorDrawable="@color/black"
+                android:textSize="15sp"
+                app:met_baseColor="@color/black"
+                app:met_floatingLabel="highlight"
+                app:met_helperText="请输入密码"
+                app:met_maxCharacters="17"
+                app:met_primaryColor="@color/black"
+                app:met_singleLineEllipsis="true"></com.rengwuxian.materialedittext.MaterialEditText>
+        </LinearLayout>
+
+        <!--AgainPassword-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear_Top"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
+            <!--Icon-->
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="15dp"
+                android:background="@mipmap/log"></ImageView>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/register_againpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="再次输入密码"
+                android:textCursorDrawable="@color/black"
+                android:textSize="15sp"
+                app:met_baseColor="@color/black"
+                app:met_floatingLabel="highlight"
+                app:met_helperText="请再次输入密码"
+                app:met_maxCharacters="17"
+                app:met_primaryColor="@color/black"
+                app:met_singleLineEllipsis="true"></com.rengwuxian.materialedittext.MaterialEditText>
+        </LinearLayout>
+
+        <!--PersonName-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear_Top"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
+            <!--Icon-->
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="15dp"
+                android:background="@mipmap/log"></ImageView>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/register_personname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="姓名"
+                android:textCursorDrawable="@color/black"
+                android:textSize="15sp"
+                app:met_baseColor="@color/black"
+                app:met_floatingLabel="highlight"
+                app:met_helperText="请输入个人姓名"
+                app:met_maxCharacters="10"
+                app:met_primaryColor="@color/black"
+                app:met_singleLineEllipsis="true"></com.rengwuxian.materialedittext.MaterialEditText>
+        </LinearLayout>
+
+        <!--AgainPassword-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear_Top"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
+            <!--Icon-->
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="15dp"
+                android:background="@mipmap/log"></ImageView>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/register_IDcard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="身份证ID"
+                android:textCursorDrawable="@color/black"
+                android:textSize="15sp"
+                app:met_baseColor="@color/black"
+                app:met_floatingLabel="highlight"
+                app:met_helperText="请输入身份证ID"
+                app:met_maxCharacters="18"
+                app:met_primaryColor="@color/black"
+                app:met_singleLineEllipsis="true"></com.rengwuxian.materialedittext.MaterialEditText>
+        </LinearLayout>
+
+        <!--Sex-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear_Top"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/register_rd_sex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <!--Icon-->
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="15dp"
+                    android:background="@mipmap/log"></ImageView>
+                <!--male-->
+                <RadioButton
+                    android:id="@+id/rd_sex_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:checked="true"
+                    android:text="男"
+                    android:textSize="15sp"></RadioButton>
+                <!--female-->
+                <RadioButton
+                    android:id="@+id/rd_sex_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="女"
+                    android:textSize="15sp"></RadioButton>
+            </RadioGroup>
+        </LinearLayout>
+
+        <!--Telphone-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear_Top"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
+            <!--Icon-->
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="15dp"
+                android:background="@mipmap/log"></ImageView>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/register_usertelphone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="手机号码"
+                android:textCursorDrawable="@color/black"
+                android:textSize="15sp"
+                app:met_baseColor="@color/black"
+                app:met_floatingLabel="highlight"
+                app:met_helperText="请输入手机号码"
+                app:met_maxCharacters="11"
+                app:met_primaryColor="@color/black"
+                app:met_singleLineEllipsis="true"></com.rengwuxian.materialedittext.MaterialEditText>
+        </LinearLayout>
+
+        <!--勾选服务-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear_Top"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/register_cb_agree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:letterSpacing="0.1"
+                android:text="我同意"
+                android:textColor="#A2C4E6"
+                android:textSize="15sp"
+                android:textStyle="bold"></CheckBox>
+
+            <TextView
+                android:id="@+id/register_tv_service"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.1"
+                android:text="《XX服务》"
+                android:textColor="#3399FF"
+                android:textSize="15sp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.1"
+                android:text="条款"
+                android:textColor="#A2C4E6"
+                android:textSize="15sp"
+                android:textStyle="bold"></TextView>
+        </LinearLayout>
+
+        <!--Bottom-->
+        <!--注册按钮-->
+        <Button
+            android:id="@+id/register_registerbutton"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="#3399FF"
+            android:text="注册"></Button>
+    </LinearLayout>
 </RelativeLayout>
