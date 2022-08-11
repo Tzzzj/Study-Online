@@ -1,4 +1,4 @@
-package com.example.studyapk;
+package com.example.studyapk.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.studyapk.activity.LoginActivity;
+import com.example.studyapk.R;
 
 public class MainActivity extends AppCompatActivity {
 

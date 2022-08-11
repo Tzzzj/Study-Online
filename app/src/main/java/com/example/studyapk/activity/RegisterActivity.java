@@ -1,10 +1,13 @@
 package com.example.studyapk.activity;
 
+import static androidx.constraintlayout.motion.utils.Oscillator.TAG;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -15,7 +18,14 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.myapplication.bean.UserData;
+
+import com.example.studyapk.R;
+import com.example.studyapk.bean.UserData;
+
+import cn.bmob.v3.Bmob;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
+
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -36,6 +46,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Bmob.initialize(this,"611534ac72c358d1e294fe3c3da4ae9d");
         setContentView(R.layout.activity_register);
 
         //初始化组件
@@ -103,10 +114,30 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             //通过Bomb来储存信息
             UserData userData = new UserData(personName,IDCard,userSex,userTelphone);
             //BmobUser当中的函数
-
-
+            userData.setUsername(userName);
+            userData.setPassword(passWord);
+            //userData.setEmail(userName);
+            //最新Bmob的注册方式
+            userData.signUp(new SaveListener<Object>() {
+                @Override
+                public void done(Object o, BmobException e) {
+                    if(e == null){
+                        Toast.makeText(RegisterActivity.this,
+                                "注册成功",
+                                Toast.LENGTH_SHORT).show();
+                    }else {
+                        System.out.println(e);
+                        Toast.makeText(RegisterActivity.this,
+                                "注册失败",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
         }
     }
+
+
+
 
     /**
      * 验证信息
@@ -334,7 +365,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.register_registerbutton:
                 register();
-                Toast.makeText(this, "信息符合要求", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.register_tv_service:
                 Toast.makeText(this, "《服务》", Toast.LENGTH_SHORT).show();
